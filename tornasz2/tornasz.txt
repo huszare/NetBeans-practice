@@ -1,0 +1,76 @@
+Az olimpián épp a tornászbajnokságot tartják. A csarnokhoz csatlakozóan van egy hosszú, szűk folyosó, melynek közepénél szembetalálkozik a svéd és a nigériai tornászválogatott négy-négy tagja. Egymás mellett nem férnek el, kénytelenek valami más megoldást kitalálni. Arra jutottak, hogy átugrálnak egymás feje felett, de nigériai csak svédet, svéd csak nigériait ugorhat át. Bárki átléphet egy szomszédos üres mezőre.
+
+A játék egy 9 egymás melletti mezőből álló táblán játszódik, X-szel jelöltük a nigériai csapat tagjait, akik a bal oldali 4 mezőt foglalják el. O-val jelöljük a svédeket, akik jobbról helyezkednek el:
+
+XXXX_OOOO
+
+A megengedett mozgások:
+
+    bármely tornász átléphet az üres helyre, ha az közvetlenül mellette van (bármely irányba).
+    X átugorhatja O-t, ha O túloldalán üres hely van (bármely irányba), és az üres hely az X-hez képest a második mezőn van.
+    O átugorhatja X-et, ha X túloldalán üres hely van (bármely irányba), és az üres hely az O-hoz képest a második mezőn van.
+
+Ez a játék egy játékosos!
+
+A cél az, hogy minél kevesebb lépésből kicseréljük a két válogatott tagjait!
+
+A csapatoknak viszont nem kell felváltva lépniük!
+
+A felhasználó úgy vezérli a programot, hogy megadja a kiindulási mező indexét (0-8), majd a célmező indexét (0-8).
+
+A bekért mezőszámokat ellenőrizni kell: előbb bekérjük a két mezőszámot, majd ellenőrizzük. Ha helytelen a lépés, akkor kiírjuk, hogy "Érvénytelen lépés!", majd újra bekérjük mind a kettőt.
+
+A program futásának egy részlete:
+
+Lépésszám: 0
+------------------
+|x|x|x|x| |o|o|o|o|
+------------------
+Melyik mezővel lépsz? (0-8)
+5
+Melyik mezőre lépsz? (0-8)
+4
+Lépésszám: 1
+------------------
+|x|x|x|x|o| |o|o|o|
+------------------
+Melyik mezővel lépsz? (0-8)
+0
+Melyik mezőre lépsz? (0-8)
+12
+Érvénytelen lépés!
+Melyik mezővel lépsz? (0-8)
+6
+Melyik mezőre lépsz? (0-8)
+5
+Lépésszám: 2
+------------------
+|x|x|x|x|o|o| |o|o|
+------------------
+
+...
+
+Melyik mezőre lépsz? (0-8)
+Lépésszám: 28
+------------------
+|o|o|o|o|x| |x|x|x|
+------------------
+Melyik mezővel lépsz? (0-8)
+4
+Melyik mezőre lépsz? (0-8)
+5
+Lépésszám: 29
+------------------
+|o|o|o|o| |x|x|x|x|
+------------------
+Gratulálok, vége a játéknak!
+
+
+Írjuk meg úgy a programot, hogy ha akár a kiindulási mező, akár a célmező megadásánál -1-et adunk meg, akkor a program minden további képernyőre írás nélkül kilép. Itt a két mező vizsgálata legyen egymástól független, tehát ha a kiindulásinál -1-et adunk, akkor is egyből lépjen ki, ne is kérje be a célmezőt:
+
+Lépésszám: 0
+------------------
+|o|o|o|o| |o|x|x|x|
+------------------
+Melyik mezővel lépsz? (0-8)
+-1
